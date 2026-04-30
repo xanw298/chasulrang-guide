@@ -28,6 +28,33 @@
       justify-content: center;
     }
 
+    .team-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.team-card {
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 22px;
+  padding: 24px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.team-title {
+  font-size: 22px;
+  font-weight: 900;
+  margin-bottom: 6px;
+  color: #b80f2e;
+}
+
+.team-desc {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 16px;
+}
+    
     .bg-number {
       position: absolute;
       font-size: 420px;
@@ -314,18 +341,36 @@
         </div>
       </div>
 
-      <h2>멤버</h2>
-      <div class="members">
-        <span>차강웅</span>
-        <span>고웅찬</span>
-        <span>정민권</span>
-        <span>오승우</span>
-        <span>김형우</span>
-        <span>황석현</span>
-        <span>이대희</span>
-        <span>이민준</span>
-        <span>송태훈</span>
-      </div>
+      <h2>멤버 구성</h2>
+
+<div class="team-section">
+  <div class="team-card">
+    <div class="team-title">지휘통제부</div>
+    <div class="team-desc">차슐랭 가이드 운영 및 의사결정 담당</div>
+    <div class="members">
+      <span>차강웅</span>
+      <span>고웅찬</span>
+      <span>오승우</span>
+      <span>정민권</span>
+    </div>
+  </div>
+
+  <div class="team-card">
+    <div class="team-title">기동타격대</div>
+    <div class="team-desc">현장 방문, 맛집 탐색 및 평가 담당</div>
+    <div class="members">
+      <span>차강웅</span>
+      <span>고웅찬</span>
+      <span>오승우</span>
+      <span>정민권</span>
+      <span>김형우</span>
+      <span>송태훈</span>
+      <span>이대희</span>
+      <span>이민준</span>
+      <span>황석현</span>
+    </div>
+  </div>
+</div>
 
     </div>
   </section>
