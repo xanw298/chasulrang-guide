@@ -1,104 +1,338 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>차슐랭 가이드</title>
+
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background: #f8f8f8;
-      color: #222;
-    }
-    header {
-      background: #111;
+      font-family: Arial, "Noto Sans KR", sans-serif;
+      background: #b80f2e;
       color: white;
-      padding: 20px;
+    }
+
+    .hero {
+      min-height: 100vh;
+      padding: 50px 24px;
       text-align: center;
-      font-size: 28px;
-      font-weight: bold;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
+
+    .bg-number {
+      position: absolute;
+      font-size: 420px;
+      font-weight: 900;
+      color: rgba(80, 0, 20, 0.16);
+      z-index: 0;
+      line-height: 0.8;
+    }
+
+    .num-1 {
+      top: 20px;
+      left: -40px;
+    }
+
+    .num-2 {
+      bottom: -40px;
+      right: -30px;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .flower {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    .small-title {
+      font-size: 34px;
+      font-weight: 800;
+      letter-spacing: 12px;
+      margin-bottom: 10px;
+    }
+
+    .main-title {
+      font-size: clamp(64px, 13vw, 150px);
+      font-weight: 900;
+      letter-spacing: 6px;
+      line-height: 0.9;
+      margin: 0;
+    }
+
+    .guide {
+      font-size: 42px;
+      font-weight: 800;
+      letter-spacing: 16px;
+      margin-top: 18px;
+    }
+
+    .subtitle {
+      margin-top: 60px;
+      color: #ff9b6b;
+      font-size: clamp(26px, 5vw, 54px);
+      font-weight: 800;
+      letter-spacing: 10px;
+    }
+
+    .section {
+      background: #fff;
+      color: #111;
+      padding: 48px 24px;
+    }
+
     .container {
-      padding: 20px;
-      max-width: 900px;
-      margin: auto;
+      max-width: 960px;
+      margin: 0 auto;
     }
+
     h2 {
-      margin-top: 40px;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 5px;
+      font-size: 28px;
+      margin: 0 0 22px;
+      border-left: 8px solid #b80f2e;
+      padding-left: 14px;
     }
-    .card {
-      background: white;
-      padding: 15px;
-      margin: 10px 0;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+    .rating-box {
+      background: #b80f2e;
+      color: white;
+      padding: 30px;
+      border-radius: 24px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     }
-    .links a {
-      display: inline-block;
-      margin: 5px 5px 0 0;
-      padding: 10px 15px;
+
+    .rating-row {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 20px;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      font-size: 18px;
+    }
+
+    .rating-row:last-child {
+      border-bottom: none;
+    }
+
+    .stars {
+      font-size: 28px;
+      letter-spacing: 4px;
+    }
+
+    .selected {
+      font-weight: 900;
+      font-style: italic;
+      font-size: 22px;
+    }
+
+    .map-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+      margin-bottom: 44px;
+    }
+
+    .map-links a {
+      text-align: center;
+      padding: 15px 12px;
       background: #111;
       color: white;
       text-decoration: none;
-      border-radius: 6px;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: 0.2s;
+    }
+
+    .map-links a:hover {
+      background: #b80f2e;
+      transform: translateY(-3px);
+    }
+
+    .restaurant-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-bottom: 44px;
+    }
+
+    .card {
+      background: #fafafa;
+      border: 1px solid #eee;
+      border-radius: 22px;
+      padding: 22px;
+      min-height: 120px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+    }
+
+    .card-title {
+      font-size: 21px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .card-desc {
       font-size: 14px;
+      color: #666;
     }
-    .links a:hover {
-      background: #444;
+
+    .members {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
     }
+
     .members span {
-      display: inline-block;
-      margin: 5px;
-      padding: 8px 12px;
-      background: #eee;
-      border-radius: 20px;
+      background: #111;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 999px;
       font-size: 14px;
+      font-weight: 700;
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 26px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    @media (max-width: 600px) {
+      .small-title {
+        font-size: 24px;
+        letter-spacing: 8px;
+      }
+
+      .guide {
+        font-size: 28px;
+        letter-spacing: 10px;
+      }
+
+      .rating-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      .bg-number {
+        font-size: 260px;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<header>🍽 차슐랭 가이드</header>
+  <section class="hero">
+    <div class="bg-number num-1">20</div>
+    <div class="bg-number num-2">25</div>
 
-<div class="container">
+    <div class="content">
+      <div class="flower">✿</div>
+      <div class="small-title">THE</div>
+      <h1 class="main-title">CXANW</h1>
+      <div class="guide">GUIDE</div>
+      <div class="subtitle">SOUTH KOREA</div>
+    </div>
+  </section>
 
-  <h2>📍 지도 바로가기</h2>
-  <div class="links">
-    <a href="https://naver.me/xEXqqgWD" target="_blank">⭐⭐⭐ 3스타</a>
-    <a href="https://naver.me/GCJuuMxz" target="_blank">⭐⭐ 2스타</a>
-    <a href="https://naver.me/5mvggeqC" target="_blank">⭐ 1스타</a>
-    <a href="https://naver.me/GWWrrKRB" target="_blank">🔥 Selected</a>
-    <a href="https://naver.me/GKIvvmEs" target="_blank">❌ 탈락</a>
-  </div>
+  <section class="section">
+    <div class="container">
 
-  <h2>🍜 맛집 리스트</h2>
+      <div class="rating-box">
+        <div class="rating-row">
+          <div class="stars">✿✿✿</div>
+          <div>모든 것이 완벽한 식당</div>
+        </div>
+        <div class="rating-row">
+          <div class="stars">✿✿</div>
+          <div>요리가 완벽한 식당</div>
+        </div>
+        <div class="rating-row">
+          <div class="stars">✿</div>
+          <div>요리가 훌륭하여 다른 사람에게도 추천할 만한 식당</div>
+        </div>
+        <div class="rating-row">
+          <div class="selected">SELECTED</div>
+          <div>특정한 요리가 훌륭한 식당</div>
+        </div>
+      </div>
 
-  <div class="card">신라제면</div>
-  <div class="card">원동미나리삼겹살</div>
-  <div class="card">봄내</div>
-  <div class="card">전포양옥</div>
-  <div class="card">부들파이터</div>
-  <div class="card">슌사이쿠보</div>
-  <div class="card">인싸PC-달고나 밀크,치즈 시즈닝 감자튀김</div>
-  <div class="card">배틀스타PC-뿌링 감자튀김</div>
-  <div class="card">토브PC-치킨 가라아게</div>
+      <h2>지도 바로가기</h2>
+      <div class="map-links">
+        <a href="https://naver.me/xEXqqgWD" target="_blank">✿✿✿ 3스타</a>
+        <a href="https://naver.me/GCJuuMxz" target="_blank">✿✿ 2스타</a>
+        <a href="https://naver.me/5mvggeqC" target="_blank">✿ 1스타</a>
+        <a href="https://naver.me/GWWrrKRB" target="_blank">SELECTED</a>
+        <a href="https://naver.me/GKIvvmEs" target="_blank">탈락</a>
+      </div>
 
-  <h2>👥 멤버</h2>
-  <div class="members">
-    <span>차강웅</span>
-    <span>고웅찬</span>
-    <span>정민권</span>
-    <span>오승우</span>
-    <span>김형우</span>
-    <span>황석현</span>
-    <span>이대희</span>
-    <span>이민준</span>
-    <span>송태훈</span>
-  </div>
+      <h2>맛집 리스트</h2>
+      <div class="restaurant-grid">
+        <div class="card">
+          <div class="card-title">원동미나리삼겹살</div>
+          <div class="card-desc">차슐랭 후보 맛집</div>
+        </div>
+        <div class="card">
+          <div class="card-title">봄내</div>
+          <div class="card-desc">차슐랭 후보 맛집</div>
+        </div>
+        <div class="card">
+          <div class="card-title">전포양옥</div>
+          <div class="card-desc">차슐랭 후보 맛집</div>
+        </div>
+        <div class="card">
+          <div class="card-title">부들파이터</div>
+          <div class="card-desc">차슐랭 후보 맛집</div>
+        </div>
+        <div class="card">
+          <div class="card-title">슌사이쿠보</div>
+          <div class="card-desc">차슐랭 후보 맛집</div>
+        </div>
+      </div>
 
-</div>
+      <h2>멤버</h2>
+      <div class="members">
+        <span>차강웅</span>
+        <span>고웅찬</span>
+        <span>정민권</span>
+        <span>오승우</span>
+        <span>김형우</span>
+        <span>황석현</span>
+        <span>이대희</span>
+        <span>이민준</span>
+        <span>송태훈</span>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    CXANW GUIDE
+  </footer>
 
 </body>
 </html>
