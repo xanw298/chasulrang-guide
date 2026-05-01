@@ -17,26 +17,6 @@
       color: white;
     }
 
-    .card {
-  text-decoration: none;
-  color: inherit;
-}
-
-.card-img {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 14px;
-  margin-bottom: 10px;
-}
-    
-    .grade-title {
-  margin-top: 30px;
-  font-size: 20px;
-  font-weight: 900;
-  color: #b80f2e;
-}
-    
     .hero {
       min-height: 100vh;
       padding: 50px 24px;
@@ -48,33 +28,6 @@
       justify-content: center;
     }
 
-    .team-section {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 18px;
-}
-
-.team-card {
-  background: #fafafa;
-  border: 1px solid #eee;
-  border-radius: 22px;
-  padding: 24px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-}
-
-.team-title {
-  font-size: 22px;
-  font-weight: 900;
-  margin-bottom: 6px;
-  color: #b80f2e;
-}
-
-.team-desc {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 16px;
-}
-    
     .bg-number {
       position: absolute;
       font-size: 420px;
@@ -164,24 +117,34 @@
     }
 
     .rating-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-  font-size: 18px;
-}
-    
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      font-size: 18px;
+    }
+
     .rating-row:last-child {
       border-bottom: none;
     }
 
-    .stars {
-  font-size: clamp(18px, 5vw, 28px);
-  letter-spacing: 2px;
-  white-space: nowrap;
-}
+    .stars,
+    .selected {
+      min-width: 110px;
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .star-mark {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      background: white;
+      border-radius: 50%;
+      margin-right: 7px;
+    }
 
     .selected {
       font-weight: 900;
@@ -189,27 +152,11 @@
       font-size: 22px;
     }
 
-    .map-links {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 12px;
-      margin-bottom: 44px;
-    }
-
-    .map-links a {
-      text-align: center;
-      padding: 15px 12px;
-      background: #111;
-      color: white;
-      text-decoration: none;
-      border-radius: 999px;
-      font-weight: 800;
-      transition: 0.2s;
-    }
-
-    .map-links a:hover {
-      background: #b80f2e;
-      transform: translateY(-3px);
+    .grade-title {
+      margin-top: 30px;
+      font-size: 20px;
+      font-weight: 900;
+      color: #b80f2e;
     }
 
     .restaurant-grid {
@@ -220,6 +167,8 @@
     }
 
     .card {
+      text-decoration: none;
+      color: inherit;
       background: #fafafa;
       border: 1px solid #eee;
       border-radius: 22px;
@@ -234,15 +183,45 @@
       box-shadow: 0 12px 28px rgba(0,0,0,0.12);
     }
 
+    .card-img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 14px;
+      margin-bottom: 10px;
+    }
+
     .card-title {
       font-size: 21px;
       font-weight: 900;
       margin-bottom: 10px;
     }
 
-    .card-desc {
+    .team-section {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .team-card {
+      background: #fafafa;
+      border: 1px solid #eee;
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    .team-title {
+      font-size: 22px;
+      font-weight: 900;
+      margin-bottom: 6px;
+      color: #b80f2e;
+    }
+
+    .team-desc {
       font-size: 14px;
       color: #666;
+      margin-bottom: 16px;
     }
 
     .members {
@@ -269,16 +248,6 @@
       letter-spacing: 2px;
     }
 
-         .star-mark {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  background: white;
-  border-radius: 50%;
-  margin-right: 6px;
-  vertical-align: middle;
-}
-    
     @media (max-width: 600px) {
       .small-title {
         font-size: 24px;
@@ -295,30 +264,20 @@
       }
 
       .rating-row {
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  gap: 12px !important;
-  grid-template-columns: none !important;
-}
+        align-items: flex-start;
+        gap: 12px;
+      }
 
-.rating-row .stars,
-.rating-row .selected {
-  min-width: 90px;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
+      .stars,
+      .selected {
+        min-width: 90px;
+      }
 
-.rating-row div:last-child {
-  flex: 1;
-}
-
-.stars {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-}
-      
+      .star-mark {
+        width: 14px;
+        height: 14px;
+        margin-right: 5px;
+      }
     }
   </style>
 </head>
@@ -330,9 +289,7 @@
     <div class="bg-number num-2">25</div>
 
     <div class="content">
-      <div class="stars">
-  <span class="star-mark"></span>
-</div>
+      <div class="flower">✿</div>
       <div class="small-title">THE</div>
       <h1 class="main-title">CXANW</h1>
       <div class="guide">GUIDE</div>
@@ -346,25 +303,28 @@
       <div class="rating-box">
         <div class="rating-row">
           <div class="stars">
-  <span class="star-mark"></span>
-  <span class="star-mark"></span>
-  <span class="star-mark"></span>
-</div>
+            <span class="star-mark"></span>
+            <span class="star-mark"></span>
+            <span class="star-mark"></span>
+          </div>
           <div>모든 것이 완벽한 식당</div>
         </div>
+
         <div class="rating-row">
           <div class="stars">
-  <span class="star-mark"></span>
-  <span class="star-mark"></span>
-</div>
+            <span class="star-mark"></span>
+            <span class="star-mark"></span>
+          </div>
           <div>요리가 완벽한 식당</div>
         </div>
+
         <div class="rating-row">
           <div class="stars">
-  <span class="star-mark"></span>
-</div>
+            <span class="star-mark"></span>
+          </div>
           <div>요리가 훌륭하여 다른 사람에게도 추천할 만한 식당</div>
         </div>
+
         <div class="rating-row">
           <div class="selected">SELECTED</div>
           <div>특정한 요리가 훌륭한 식당</div>
@@ -373,108 +333,101 @@
 
       <h2>맛집 리스트</h2>
 
-<h3 class="grade-title">✿✿✿ 3스타</h3>
-<div class="restaurant-grid">
+      <h3 class="grade-title">●●● 3스타</h3>
+      <div class="restaurant-grid">
+      </div>
 
-</div>
+      <h3 class="grade-title">●● 2스타</h3>
+      <div class="restaurant-grid">
+        <a href="https://naver.me/GUwSpBc6" target="_blank" class="card">
+          <img src="food1.jpg" class="card-img">
+          <div class="card-title">신라제면</div>
+        </a>
+      </div>
 
-<h3 class="grade-title">✿✿ 2스타</h3>
-<div class="restaurant-grid">
+      <h3 class="grade-title">● 1스타</h3>
+      <div class="restaurant-grid">
+        <a href="https://naver.me/53le0FsZ" target="_blank" class="card">
+          <img src="food2.jpg" class="card-img">
+          <div class="card-title">원동미나리삼겹살</div>
+        </a>
 
-  <a href="https://naver.me/GUwSpBc6" target="_blank" class="card">
-    <img src="food1.jpg" class="card-img">
-    <div class="card-title">신라제면</div>
-  </a>
+        <a href="https://naver.me/xKERsHkW" target="_blank" class="card">
+          <img src="food3.jpg" class="card-img">
+          <div class="card-title">봄내</div>
+        </a>
 
-</div>
+        <a href="https://naver.me/5JpU3XUX" target="_blank" class="card">
+          <img src="food4.jpg" class="card-img">
+          <div class="card-title">전포양옥</div>
+        </a>
 
-<h3 class="grade-title">✿ 1스타</h3>
-<div class="restaurant-grid">
+        <a href="https://naver.me/G1wSjUy9" target="_blank" class="card">
+          <img src="food5.jpg" class="card-img">
+          <div class="card-title">부들파이터</div>
+        </a>
 
-  <a href="https://naver.me/53le0FsZ" target="_blank" class="card">
-    <img src="food2.jpg" class="card-img">
-    <div class="card-title">원동미나리삼겹살</div>
-  </a>
+        <a href="https://naver.me/xeAf9Kf1" target="_blank" class="card">
+          <img src="food6.jpg" class="card-img">
+          <div class="card-title">슌사이쿠보</div>
+        </a>
+      </div>
 
-  <a href="https://naver.me/xKERsHkW" target="_blank" class="card">
-    <img src="food3.jpg" class="card-img">
-    <div class="card-title">봄내</div>
-  </a>
+      <h3 class="grade-title">SELECTED</h3>
+      <div class="restaurant-grid">
+        <a href="https://naver.me/GtJ8weJN" target="_blank" class="card">
+          <img src="food7.jpg" class="card-img">
+          <div class="card-title">인싸PC - 달고나 밀크, 치즈 시즈닝 감자튀김</div>
+        </a>
 
-  <a href="https://naver.me/5JpU3XUX" target="_blank" class="card">
-    <img src="food4.jpg" class="card-img">
-    <div class="card-title">전포양옥</div>
-  </a>
+        <a href="https://naver.me/FMTwvbJz" target="_blank" class="card">
+          <img src="food8.jpg" class="card-img">
+          <div class="card-title">배틀스타PC - 뿌링 감자튀김</div>
+        </a>
 
-  <a href="https://naver.me/G1wSjUy9" target="_blank" class="card">
-    <img src="food5.jpg" class="card-img">
-    <div class="card-title">부들파이터</div>
-  </a>
-
-  <a href="https://naver.me/xeAf9Kf1" target="_blank" class="card">
-    <img src="food6.jpg" class="card-img">
-    <div class="card-title">슌사이쿠보</div>
-  </a>
-
-</div>
-
-<h3 class="grade-title">SELECTED</h3>
-<div class="restaurant-grid">
-
-  <a href="https://naver.me/GtJ8weJN" target="_blank" class="card">
-    <img src="food7.jpg" class="card-img">
-    <div class="card-title">인싸PC - 달고나 밀크, 치즈 시즈닝 감자튀김</div>
-  </a>
-
-  <a href="https://naver.me/FMTwvbJz" target="_blank" class="card">
-    <img src="food8.jpg" class="card-img">
-    <div class="card-title">배틀스타PC - 뿌링 감자튀김</div>
-  </a>
-
-  <a href="https://naver.me/FeNQfCMB" target="_blank" class="card">
-    <img src="food9.jpg" class="card-img">
-    <div class="card-title">토브PC - 치킨 가라아게</div>
-  </a>
-
-</div>
+        <a href="https://naver.me/FeNQfCMB" target="_blank" class="card">
+          <img src="food9.jpg" class="card-img">
+          <div class="card-title">토브PC - 치킨 가라아게</div>
+        </a>
+      </div>
 
       <h2>멤버 구성</h2>
 
-<div class="team-section">
-  <div class="team-card">
-    <div class="team-title">지휘통제부</div>
-    <div class="team-desc">차슐랭 가이드 운영 및 의사결정 담당</div>
-    <div class="members">
-      <span>차강웅</span>
-      <span>고웅찬</span>
-      <span>오승우</span>
-      <span>정민권</span>
-    </div>
-  </div>
+      <div class="team-section">
+        <div class="team-card">
+          <div class="team-title">지휘통제부</div>
+          <div class="team-desc">차슐랭 가이드 운영 및 의사결정 담당</div>
+          <div class="members">
+            <span>차강웅</span>
+            <span>고웅찬</span>
+            <span>오승우</span>
+            <span>정민권</span>
+          </div>
+        </div>
 
-  <div class="team-card">
-    <div class="team-title">기동타격대</div>
-    <div class="team-desc">현장 방문, 맛집 탐색 및 평가 담당</div>
-    <div class="members">
-      <span>차강웅</span>
-      <span>고웅찬</span>
-      <span>오승우</span>
-      <span>정민권</span>
-      <span>김형우</span>
-      <span>송태훈</span>
-      <span>이대희</span>
-      <span>이민준</span>
-      <span>황석현</span>
-    </div>
-  </div>
-</div>
+        <div class="team-card">
+          <div class="team-title">기동타격대</div>
+          <div class="team-desc">현장 방문, 맛집 탐색 및 평가 담당</div>
+          <div class="members">
+            <span>차강웅</span>
+            <span>고웅찬</span>
+            <span>오승우</span>
+            <span>정민권</span>
+            <span>김형우</span>
+            <span>송태훈</span>
+            <span>이대희</span>
+            <span>이민준</span>
+            <span>황석현</span>
+          </div>
+        </div>
+      </div>
 
     </div>
   </section>
 
- <footer>
+  <footer>
     CXANW GUIDE
   </footer>
-  
+
 </body>
 </html>
