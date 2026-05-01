@@ -164,15 +164,15 @@
     }
 
     .rating-row {
-      display: grid;
-      grid-template-columns: 130px 1fr;
-      gap: 20px;
-      align-items: center;
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-      font-size: 18px;
-    }
-
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  font-size: 18px;
+}
+    
     .rating-row:last-child {
       border-bottom: none;
     }
@@ -278,11 +278,6 @@
       .guide {
         font-size: 28px;
         letter-spacing: 10px;
-      }
-
-      .rating-row {
-        grid-template-columns: 1fr;
-        gap: 6px;
       }
 
       .bg-number {
