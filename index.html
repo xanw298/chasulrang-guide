@@ -6,9 +6,7 @@
   <title>차슐랭 가이드</title>
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -22,7 +20,6 @@
       padding: 50px 24px;
       text-align: center;
       position: relative;
-      overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -32,20 +29,12 @@
       position: absolute;
       font-size: 420px;
       font-weight: 900;
-      color: rgba(80, 0, 20, 0.16);
+      color: rgba(80,0,20,0.16);
       z-index: 0;
-      line-height: 0.8;
     }
 
-    .num-1 {
-      top: 20px;
-      left: -40px;
-    }
-
-    .num-2 {
-      bottom: -40px;
-      right: -30px;
-    }
+    .num-1 { top: 20px; left: -40px; }
+    .num-2 { bottom: -40px; right: -30px; }
 
     .content {
       position: relative;
@@ -54,23 +43,16 @@
       margin: 0 auto;
     }
 
-    .flower {
-      font-size: 42px;
-      margin-bottom: 20px;
-    }
-
     .small-title {
       font-size: 34px;
       font-weight: 800;
       letter-spacing: 12px;
-      margin-bottom: 10px;
     }
 
     .main-title {
       font-size: clamp(64px, 13vw, 150px);
       font-weight: 900;
       letter-spacing: 6px;
-      line-height: 0.9;
       margin: 0;
     }
 
@@ -78,15 +60,14 @@
       font-size: 42px;
       font-weight: 800;
       letter-spacing: 16px;
-      margin-top: 18px;
+      margin-top: 10px;
     }
 
     .subtitle {
-      margin-top: 60px;
+      margin-top: 40px;
       color: #ff9b6b;
       font-size: clamp(26px, 5vw, 54px);
       font-weight: 800;
-      letter-spacing: 10px;
     }
 
     .section {
@@ -102,54 +83,39 @@
 
     h2 {
       font-size: 28px;
-      margin: 0 0 22px;
       border-left: 8px solid #b80f2e;
       padding-left: 14px;
     }
 
     .rating-box {
       background: #b80f2e;
-      color: white;
       padding: 30px;
       border-radius: 24px;
       margin-bottom: 40px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     }
 
     .rating-row {
       display: flex;
       align-items: center;
-      gap: 18px;
+      gap: 20px;
       padding: 12px 0;
       border-bottom: 1px solid rgba(255,255,255,0.2);
-      font-size: 18px;
     }
 
-    .rating-row:last-child {
-      border-bottom: none;
-    }
+    .rating-row:last-child { border-bottom: none; }
 
-    .stars,
-    .selected {
+    .stars {
       min-width: 110px;
-      display: flex;
-      align-items: center;
+      font-size: 28px;
+      letter-spacing: 4px;
+      white-space: nowrap;
       flex-shrink: 0;
-    }
-
-    .star-mark {
-      display: inline-block;
-      width: 16px;
-      height: 16px;
-      background: white;
-      border-radius: 50%;
-      margin-right: 7px;
     }
 
     .selected {
       font-weight: 900;
-      font-style: italic;
       font-size: 22px;
+      min-width: 110px;
     }
 
     .grade-title {
@@ -163,24 +129,21 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 18px;
-      margin-bottom: 44px;
+      margin-bottom: 40px;
     }
 
     .card {
       text-decoration: none;
       color: inherit;
       background: #fafafa;
-      border: 1px solid #eee;
       border-radius: 22px;
-      padding: 22px;
-      min-height: 120px;
+      padding: 18px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.06);
       transition: 0.2s;
     }
 
     .card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.12);
     }
 
     .card-img {
@@ -192,242 +155,150 @@
     }
 
     .card-title {
-      font-size: 21px;
+      font-size: 18px;
       font-weight: 900;
-      margin-bottom: 10px;
     }
 
     .team-section {
       display: grid;
-      grid-template-columns: 1fr;
       gap: 18px;
     }
 
     .team-card {
       background: #fafafa;
-      border: 1px solid #eee;
-      border-radius: 22px;
-      padding: 24px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      padding: 20px;
+      border-radius: 20px;
     }
 
     .team-title {
-      font-size: 22px;
       font-weight: 900;
-      margin-bottom: 6px;
       color: #b80f2e;
-    }
-
-    .team-desc {
-      font-size: 14px;
-      color: #666;
-      margin-bottom: 16px;
     }
 
     .members {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 8px;
+      margin-top: 10px;
     }
 
     .members span {
       background: #111;
       color: white;
-      padding: 10px 16px;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 20px;
     }
 
     footer {
       background: #111;
-      color: white;
       text-align: center;
-      padding: 26px;
+      padding: 20px;
       font-weight: 800;
-      letter-spacing: 2px;
     }
 
     @media (max-width: 600px) {
-      .small-title {
-        font-size: 24px;
-        letter-spacing: 8px;
-      }
-
-      .guide {
-        font-size: 28px;
-        letter-spacing: 10px;
-      }
-
-      .bg-number {
-        font-size: 260px;
-      }
-
-      .rating-row {
-        align-items: flex-start;
-        gap: 12px;
-      }
-
-      .stars,
-      .selected {
-        min-width: 90px;
-      }
-
-      .star-mark {
-        width: 14px;
-        height: 14px;
-        margin-right: 5px;
-      }
+      .small-title { font-size: 24px; }
+      .guide { font-size: 28px; }
+      .bg-number { font-size: 260px; }
     }
+
   </style>
 </head>
 
 <body>
 
-  <section class="hero">
-    <div class="bg-number num-1">20</div>
-    <div class="bg-number num-2">25</div>
+<section class="hero">
+  <div class="bg-number num-1">20</div>
+  <div class="bg-number num-2">25</div>
 
-    <div class="content">
-      <div class="flower">✿</div>
-      <div class="small-title">THE</div>
-      <h1 class="main-title">CXANW</h1>
-      <div class="guide">GUIDE</div>
-      <div class="subtitle">SOUTH KOREA</div>
-    </div>
-  </section>
+  <div class="content">
+    <div class="small-title">THE</div>
+    <h1 class="main-title">CXANW</h1>
+    <div class="guide">GUIDE</div>
+    <div class="subtitle">SOUTH KOREA</div>
+  </div>
+</section>
 
-  <section class="section">
-    <div class="container">
+<section class="section">
+<div class="container">
 
-      <div class="rating-box">
-        <div class="rating-row">
-          <div class="stars">
-            <span class="star-mark"></span>
-            <span class="star-mark"></span>
-            <span class="star-mark"></span>
-          </div>
-          <div>모든 것이 완벽한 식당</div>
-        </div>
+<div class="rating-box">
+  <div class="rating-row">
+    <div class="stars">✿✿✿</div>
+    <div>모든 것이 완벽한 식당</div>
+  </div>
 
-        <div class="rating-row">
-          <div class="stars">
-            <span class="star-mark"></span>
-            <span class="star-mark"></span>
-          </div>
-          <div>요리가 완벽한 식당</div>
-        </div>
+  <div class="rating-row">
+    <div class="stars">✿✿</div>
+    <div>요리가 완벽한 식당</div>
+  </div>
 
-        <div class="rating-row">
-          <div class="stars">
-            <span class="star-mark"></span>
-          </div>
-          <div>요리가 훌륭하여 다른 사람에게도 추천할 만한 식당</div>
-        </div>
+  <div class="rating-row">
+    <div class="stars">✿</div>
+    <div>요리가 훌륭하여 추천할 만한 식당</div>
+  </div>
 
-        <div class="rating-row">
-          <div class="selected">SELECTED</div>
-          <div>특정한 요리가 훌륭한 식당</div>
-        </div>
-      </div>
+  <div class="rating-row">
+    <div class="selected">SELECTED</div>
+    <div>특정 메뉴가 훌륭한 식당</div>
+  </div>
+</div>
 
-      <h2>맛집 리스트</h2>
+<h2>맛집 리스트</h2>
 
-      <h3 class="grade-title">●●● 3스타</h3>
-      <div class="restaurant-grid">
-      </div>
+<h3 class="grade-title">✿✿✿ 3스타</h3>
+<div class="restaurant-grid"></div>
 
-      <h3 class="grade-title">●● 2스타</h3>
-      <div class="restaurant-grid">
-        <a href="https://naver.me/GUwSpBc6" target="_blank" class="card">
-          <img src="food1.jpg" class="card-img">
-          <div class="card-title">신라제면</div>
-        </a>
-      </div>
+<h3 class="grade-title">✿✿ 2스타</h3>
+<div class="restaurant-grid">
+  <a href="https://naver.me/GUwSpBc6" target="_blank" class="card">
+    <img src="food1.jpg" class="card-img">
+    <div class="card-title">신라제면</div>
+  </a>
+</div>
 
-      <h3 class="grade-title">● 1스타</h3>
-      <div class="restaurant-grid">
-        <a href="https://naver.me/53le0FsZ" target="_blank" class="card">
-          <img src="food2.jpg" class="card-img">
-          <div class="card-title">원동미나리삼겹살</div>
-        </a>
+<h3 class="grade-title">✿ 1스타</h3>
+<div class="restaurant-grid">
+  <a href="https://naver.me/53le0FsZ" target="_blank" class="card">
+    <img src="food2.jpg" class="card-img">
+    <div class="card-title">원동미나리삼겹살</div>
+  </a>
 
-        <a href="https://naver.me/xKERsHkW" target="_blank" class="card">
-          <img src="food3.jpg" class="card-img">
-          <div class="card-title">봄내</div>
-        </a>
+  <a href="https://naver.me/xKERsHkW" target="_blank" class="card">
+    <img src="food3.jpg" class="card-img">
+    <div class="card-title">봄내</div>
+  </a>
 
-        <a href="https://naver.me/5JpU3XUX" target="_blank" class="card">
-          <img src="food4.jpg" class="card-img">
-          <div class="card-title">전포양옥</div>
-        </a>
+  <a href="https://naver.me/5JpU3XUX" target="_blank" class="card">
+    <img src="food4.jpg" class="card-img">
+    <div class="card-title">전포양옥</div>
+  </a>
 
-        <a href="https://naver.me/G1wSjUy9" target="_blank" class="card">
-          <img src="food5.jpg" class="card-img">
-          <div class="card-title">부들파이터</div>
-        </a>
+  <a href="https://naver.me/G1wSjUy9" target="_blank" class="card">
+    <img src="food5.jpg" class="card-img">
+    <div class="card-title">부들파이터</div>
+  </a>
 
-        <a href="https://naver.me/xeAf9Kf1" target="_blank" class="card">
-          <img src="food6.jpg" class="card-img">
-          <div class="card-title">슌사이쿠보</div>
-        </a>
-      </div>
+  <a href="https://naver.me/xeAf9Kf1" target="_blank" class="card">
+    <img src="food6.jpg" class="card-img">
+    <div class="card-title">슌사이쿠보</div>
+  </a>
+</div>
 
-      <h3 class="grade-title">SELECTED</h3>
-      <div class="restaurant-grid">
-        <a href="https://naver.me/GtJ8weJN" target="_blank" class="card">
-          <img src="food7.jpg" class="card-img">
-          <div class="card-title">인싸PC - 달고나 밀크, 치즈 시즈닝 감자튀김</div>
-        </a>
+<h3 class="grade-title">SELECTED</h3>
+<div class="restaurant-grid">
+  <a href="https://naver.me/GtJ8weJN" target="_blank" class="card">
+    <img src="food7.jpg" class="card-img">
+    <div class="card-title">인싸PC</div>
+  </a>
+</div>
 
-        <a href="https://naver.me/FMTwvbJz" target="_blank" class="card">
-          <img src="food8.jpg" class="card-img">
-          <div class="card-title">배틀스타PC - 뿌링 감자튀김</div>
-        </a>
+</div>
+</section>
 
-        <a href="https://naver.me/FeNQfCMB" target="_blank" class="card">
-          <img src="food9.jpg" class="card-img">
-          <div class="card-title">토브PC - 치킨 가라아게</div>
-        </a>
-      </div>
-
-      <h2>멤버 구성</h2>
-
-      <div class="team-section">
-        <div class="team-card">
-          <div class="team-title">지휘통제부</div>
-          <div class="team-desc">차슐랭 가이드 운영 및 의사결정 담당</div>
-          <div class="members">
-            <span>차강웅</span>
-            <span>고웅찬</span>
-            <span>오승우</span>
-            <span>정민권</span>
-          </div>
-        </div>
-
-        <div class="team-card">
-          <div class="team-title">기동타격대</div>
-          <div class="team-desc">현장 방문, 맛집 탐색 및 평가 담당</div>
-          <div class="members">
-            <span>차강웅</span>
-            <span>고웅찬</span>
-            <span>오승우</span>
-            <span>정민권</span>
-            <span>김형우</span>
-            <span>송태훈</span>
-            <span>이대희</span>
-            <span>이민준</span>
-            <span>황석현</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <footer>
-    CXANW GUIDE
-  </footer>
+<footer>
+CXANW GUIDE
+</footer>
 
 </body>
 </html>
