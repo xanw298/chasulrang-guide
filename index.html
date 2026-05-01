@@ -283,6 +283,26 @@
       .bg-number {
         font-size: 260px;
       }
+
+      .rating-row {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 12px !important;
+  grid-template-columns: none !important;
+}
+
+.rating-row .stars,
+.rating-row .selected {
+  min-width: 90px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.rating-row div:last-child {
+  flex: 1;
+}
+      
     }
   </style>
 </head>
