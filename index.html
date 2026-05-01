@@ -118,19 +118,18 @@
     }
 
     .rating-row {
-      display: grid;
-      grid-template-columns: 130px 1fr;
-      gap: 20px;
-      align-items: center;
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-      font-size: 18px;
-      text-align: left;
-    }
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 20px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  font-size: 18px;
+}
 
-    .rating-row:last-child {
-      border-bottom: none;
-    }
+.rating-row div:last-child {
+  text-align: right;
+}
 
     .stars {
       font-size: 28px;
@@ -255,6 +254,10 @@
         letter-spacing: 8px;
       }
 
+      .rating-row div:last-child {
+  text-align: right;
+}
+      
       .guide {
         font-size: 28px;
         letter-spacing: 10px;
