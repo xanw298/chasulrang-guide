@@ -302,6 +302,22 @@
 .rating-row div:last-child {
   flex: 1;
 }
+
+      .star-mark {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
       
     }
   </style>
@@ -314,7 +330,9 @@
     <div class="bg-number num-2">25</div>
 
     <div class="content">
-      <div class="flower">✿</div>
+      <div class="stars">
+  <span class="star-mark"></span>
+</div>
       <div class="small-title">THE</div>
       <h1 class="main-title">CXANW</h1>
       <div class="guide">GUIDE</div>
@@ -327,15 +345,24 @@
 
       <div class="rating-box">
         <div class="rating-row">
-          <div class="stars">✿✿✿</div>
+          <div class="stars">
+  <span class="star-mark"></span>
+  <span class="star-mark"></span>
+  <span class="star-mark"></span>
+</div>
           <div>모든 것이 완벽한 식당</div>
         </div>
         <div class="rating-row">
-          <div class="stars">✿✿</div>
+          <div class="stars">
+  <span class="star-mark"></span>
+  <span class="star-mark"></span>
+</div>
           <div>요리가 완벽한 식당</div>
         </div>
         <div class="rating-row">
-          <div class="stars">✿</div>
+          <div class="stars">
+  <span class="star-mark"></span>
+</div>
           <div>요리가 훌륭하여 다른 사람에게도 추천할 만한 식당</div>
         </div>
         <div class="rating-row">
